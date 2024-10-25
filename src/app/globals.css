@@ -2,20 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  @apply box-border
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-slate-900 text-white
+}
+
+button,
+button[type="filled"] {
+  @apply bg-white text-black px-4 py-2 rounded-full w-full transition-opacity
+}
+
+button[type="outlined"] {
+  @apply bg-transparent text-white border border-white border-opacity-50
+}
+
+button[type="mini"] {
+  @apply bg-transparent text-white border border-white border-opacity-50 px-2 py-1 text-sm w-max max-w-full
+}
+
+button:hover {
+  @apply opacity-80
+}
+
+input[type="text"],
+input[type="number"] {
+  @apply bg-transparent border border-slate-500 p-2 rounded-lg
 }
