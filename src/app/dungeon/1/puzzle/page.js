@@ -7,10 +7,10 @@ import { validAnswer } from "@/app/data/puzzle/01";
 export default function Puzzle() {
   const [showInvalid, setShowInvalid] = useState(false);
   const [showIncorrect, setShowIncorrect] = useState(false);
-  const [randomBottleIndex, setRandomBottleIndex] = useState(null); // Initialize as null
+  const [randomQuestionIndex, setRandomQuestionIndex] = useState(null); // Initialize as null
 
   useEffect(() => {
-    setRandomBottleIndex(Math.floor(Math.random() * 100)); // Set the value after component mounts
+    setRandomQuestionIndex(Math.floor(Math.random() * 100)); // Set the value after component mounts
   }, []);
 
   function handleSequence() {
@@ -28,7 +28,7 @@ export default function Puzzle() {
       setShowInvalid(false);
       console.log("Answer Format Check: Passed");
 
-      if ((r == validAnswer[randomBottleIndex].r) && (g == validAnswer[randomBottleIndex].g) && validAnswer[randomBottleIndex].b) {
+      if ((r == validAnswer[randomQuestionIndex].r) && (g == validAnswer[randomQuestionIndex].g) && validAnswer[randomQuestionIndex].b) {
         setShowIncorrect(false);
         location.href = "/dungeon/1/puzzle/success";
         return console.log("yippie");
@@ -53,7 +53,7 @@ export default function Puzzle() {
             <div className="flex justify-between items-end">
               <h1><b>ปริมาณสารในน้ำยาวิเศษ</b></h1>
               <div className="[&>*]:text-right">
-                <p>ขวดที่ #{randomBottleIndex + 1}</p>
+                <p>ขวดที่ #{randomQuestionIndex + 1}</p>
               </div>
             </div>
             <div className="grid gap-2 grid-cols-3 [&>p]:text-center">

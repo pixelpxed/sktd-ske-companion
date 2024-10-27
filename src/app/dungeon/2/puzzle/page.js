@@ -1,40 +1,32 @@
 "use client"
 
 import { useEffect, useState } from "react";
-var randomBottleIndex = []
+import { validAnswer } from "@/app/data/puzzle/02";
+
+var randomQuestionIndex = []
 
 export default function Puzzle() {
   const [showInvalid, setShowInvalid] = useState(false);
   const [showIncorrect, setShowIncorrect] = useState(false);
-  // const [randomBottleIndex] = useState(() => Math.floor(Math.random() * 100)); // Initialize once
+  const [randomQuestionIndex, setRandomQuestionIndex] = useState(null); // Initialize as null
 
-  randomBottleIndex.push(Math.floor(Math.random() * 100))
-  console.log(randomBottleIndex);
+  useEffect(() => {
+    setRandomQuestionIndex(Math.floor(Math.random() * 12)); // Set the value after component mounts
+  }, []);
   
-
-  // useEffect(() => {
-  //   console.log(randomBottleIndex);
-  // }, [randomBottleIndex]); // Log only once when component mounts
-
-  const validAnswer = ["0011", "1110", "1101"];
+  console.log(randomQuestionIndex);
+  
 
   function handleSequence() {
     const ans1 = document.querySelector("#input-1").value
-    const ans2 = document.querySelector("#input-2").value
-    const ans3 = document.querySelector("#input-3").value
 
-    const isValidColorComponent = (value) => /^\d+$/.test(value);
+    const isValidAnswerFormat = (value) => /^\d+$/.test(value);
 
-    console.log(ans1);
-    console.log(ans2);
-    console.log(ans3);
-    
-
-    if (isValidColorComponent(ans1) && isValidColorComponent(ans2) && isValidColorComponent(ans3)) {
+    if (isValidAnswerFormat(ans1)) {
       setShowInvalid(false);
       console.log("Answer Format Check: Passed");
 
-      if ((ans1 == validAnswer[0]) && (ans2 == validAnswer[1]) && (ans3 == validAnswer[2])) {
+      if ((ans1 == validAnswer[randomQuestionIndex])) {
         setShowIncorrect(false);
         location.href = "/dungeon/2/puzzle/success"
         return console.log("yippie");
@@ -44,6 +36,7 @@ export default function Puzzle() {
       }
     } else {
       setShowInvalid(true);
+      setShowIncorrect(false);
       console.log("Invalid input");
     }
   }
@@ -63,12 +56,10 @@ export default function Puzzle() {
               </div>
             </div>
             <div className="grid gap-2 grid-cols-1 [&>p]:text-left">
-              <p>เปิดระบบปั๊มน้ำโบราณ</p>
+              <p>{randomQuestionIndex} นาฬิกา</p>
               <input type="text" id="input-1" placeholder="พิมพ์คำตอบของคุณ (XXXX)" className="font-mono" />
-              <p>ปิดประตูเขื่อนเก็บน้ำขนาดใหญ่</p>
-              <input type="text" id="input-2" placeholder="พิมพ์คำตอบของคุณ (XXXX)" className="font-mono" />
-              <p>เปิดระบบท่อระบายน้ำลับใต้พื้นทราย</p>
-              <input type="text" id="input-3" placeholder="พิมพ์คำตอบของคุณ (XXXX)" className="font-mono" />
+              {showInvalid ? <p className="text-red-400 text-sm">รูปแบบคำตอบไม่ถูกต้อง</p> : <></>}
+              {showIncorrect ? <p className="text-red-400 text-sm">คำตอบไม่ถูกต้อง</p> : <></>}
             </div>
           </div>
           <div className="grid gap-2 p-4 w-full">
