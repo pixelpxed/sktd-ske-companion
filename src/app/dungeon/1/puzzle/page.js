@@ -1,14 +1,17 @@
-"use client"
+'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { validAnswer } from "@/app/data/puzzle/01";
 
 export default function Puzzle() {
   const [showInvalid, setShowInvalid] = useState(false);
   const [showIncorrect, setShowIncorrect] = useState(false);
-  // const [randomBottleIndex] = useState(() => Math.floor(Math.random() * 100)); // Initialize once
+  const [randomBottleIndex, setRandomBottleIndex] = useState(null); // Initialize as null
 
-  const validAnswer = [168, 26, 13];
-
+  useEffect(() => {
+    setRandomBottleIndex(Math.floor(Math.random() * 100)); // Set the value after component mounts
+  }, []);
 
   function handleSequence() {
     const r = document.querySelector("#input-r").value;
@@ -18,17 +21,16 @@ export default function Puzzle() {
     const isValidColorComponent = (value) => /^\d+$/.test(value) && value >= 0 && value <= 255;
 
     if (
-      isValidColorComponent(r) && 
-      isValidColorComponent(g) && 
+      isValidColorComponent(r) &&
+      isValidColorComponent(g) &&
       isValidColorComponent(b)
     ) {
       setShowInvalid(false);
       console.log("Answer Format Check: Passed");
 
-      if ((r == validAnswer[0]) && (g == validAnswer[1]) && (b == validAnswer[2])) {
+      if ((r == validAnswer[randomBottleIndex].r) && (g == validAnswer[randomBottleIndex].g) && validAnswer[randomBottleIndex].b) {
         setShowIncorrect(false);
-        // router.push("/dungeon/1/puzzle/success")
-        location.href = "/dungeon/1/puzzle/success"
+        location.href = "/dungeon/1/puzzle/success";
         return console.log("yippie");
       } else {
         setShowIncorrect(true);
@@ -51,7 +53,7 @@ export default function Puzzle() {
             <div className="flex justify-between items-end">
               <h1><b>ปริมาณสารในน้ำยาวิเศษ</b></h1>
               <div className="[&>*]:text-right">
-                <p>ขวดที่ #005</p>
+                <p>ขวดที่ #{randomBottleIndex + 1}</p>
               </div>
             </div>
             <div className="grid gap-2 grid-cols-3 [&>p]:text-center">
