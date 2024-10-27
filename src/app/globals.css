@@ -31,3 +31,7 @@ input[type="text"],
 input[type="number"] {
   @apply bg-transparent border border-slate-500 p-2 rounded-lg
 }
+
+p {
+  @apply text-lg
+}
