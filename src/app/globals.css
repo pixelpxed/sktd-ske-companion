@@ -23,6 +23,10 @@ button[type="mini"] {
   @apply bg-transparent text-white border border-white border-opacity-50 px-2 py-1 text-sm w-max max-w-full
 }
 
+button[disabled="true"] {
+  @apply pointer-events-none opacity-50
+}
+
 button:hover {
   @apply opacity-80
 }

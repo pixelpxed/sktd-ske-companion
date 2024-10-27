@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 import { validAnswer } from "@/app/data/puzzle/01";
 
@@ -68,8 +69,10 @@ export default function Puzzle() {
             </div>
           </div>
           <div className="grid gap-2 p-4 w-full">
+            <Link href="/dungeon/1/puzzle/tutorial">
+              <button type="outlined">วิธีการแก้</button>
+            </Link>
             <button onClick={handleSequence} type="filled">ต่อไป</button>
-            <button onClick={() => { }} type="outlined">วิธีการแก้</button>
           </div>
         </div>
       </div>

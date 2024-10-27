@@ -16,7 +16,7 @@ export default function Home() {
     if ((sequenceIndex + 1) < sequence.length) {
       return setSequenceIndex(sequenceIndex + 1)
     } else {
-      return location.href = "/dungeon/1/puzzle";
+      return location.href = "/dungeon/1/puzzle/tutorial";
     }
   }
 
