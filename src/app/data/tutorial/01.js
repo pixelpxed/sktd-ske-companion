@@ -2,13 +2,13 @@ import TutorialArrow from "@/app/components/TutorialArrow"
 
 export const tutorial = [
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-1" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">#9A667F</h1>
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-2" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -19,7 +19,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-3" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -39,7 +39,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-4" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -65,7 +65,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-5" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -91,7 +91,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-6" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -121,7 +121,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-7" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #
@@ -151,7 +151,7 @@ export const tutorial = [
     </div>
   ),
   (
-    <div className="grid gap-2 text-center">
+    <div key="slide-8" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">
         #

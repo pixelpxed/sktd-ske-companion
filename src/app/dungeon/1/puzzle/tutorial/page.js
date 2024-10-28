@@ -17,7 +17,6 @@ export default function TutorialPage() {
             <BackHistoryButton />
           </div>
           <div className="flex flex-col py-16 align-middle gap-0 transition-opacity">
-            {/* <Image src={slideShow[currentSlideShow]} width={2160} height={3840} className="aspect-[9/16] h-[calc(100dvh-20rem)] w-auto m-auto" alt={"Tutorial for playing this room."} /> */}
             {tutorial[currentSlideShow]}
           </div>
           <div className="grid gap-2 p-4 w-full">

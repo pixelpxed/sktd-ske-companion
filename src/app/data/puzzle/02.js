@@ -1,4 +1,4 @@
-export const randomSituation = [
+export const randomSituationList = [
   {
     "problem": "น้ำท่วมใหญ่",
     "solution": "เปิดระบบท่อระบายน้ำลับใต้พื้นทราย"
@@ -11,6 +11,21 @@ export const randomSituation = [
     "problem": "ปัญหาอาหารขาดแคลน",
     "solution": "เปิดคลังอาหารฉุกเฉิน"
   }
+]
+
+export const validAnswer = [
+  "0011",
+  "1110",
+  "1101",
+  "1001",
+  "0000",
+  "0110",
+  "1101",
+  "1011",
+  "0101",
+  "1110",
+  "1110",
+  "1111",
 ]
 
 // export const validAnswer = [
@@ -27,18 +42,3 @@ export const randomSituation = [
 //   "1110",
 //   "1100",  
 // ]
-
-export const validAnswer = [
-  "0011",
-  "1110",
-  "1101",
-  "1001",
-  "0000",
-  "0110",
-  "1101",
-  "1011",
-  "0101",
-  "1110",
-  "1110",
-  "1111",
-]
