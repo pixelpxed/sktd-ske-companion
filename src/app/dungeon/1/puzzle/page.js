@@ -30,7 +30,7 @@ export default function Puzzle() {
       setShowInvalid(false);
       console.log("Answer Format Check: Passed");
 
-      if ((r == validAnswer[randomQuestionIndex].r) && (g == validAnswer[randomQuestionIndex].g) && validAnswer[randomQuestionIndex].b) {
+      if ((r == validAnswer[randomQuestionIndex].r) && (g == validAnswer[randomQuestionIndex].g) && (b == validAnswer[randomQuestionIndex].b)) {
         setShowIncorrect(false);
         location.href = "/dungeon/1/puzzle/success";
         return console.log("yippie");
