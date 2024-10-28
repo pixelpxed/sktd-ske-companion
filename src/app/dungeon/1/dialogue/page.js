@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import BackHistoryButton from "@/app/components/BackHistoryButton";
 
 import StickmanImage from "../../../components/StickmanImage";
 import { sequence } from "../../../data/sequence/01.js";
@@ -24,6 +25,9 @@ export default function Home() {
     <>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
+          <p className="p-4">
+            <BackHistoryButton />
+          </p>
           {curSequence.stickman.show ? <div className="flex-grow" /> : <></>}
           <div className={curSequence.stickman.show ? "" : "flex flex-col justify-center h-full [&>div]:!pb-4"}>
             {

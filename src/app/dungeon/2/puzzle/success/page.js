@@ -1,12 +1,14 @@
 'use client'
 
+import BackHistoryButton from "@/app/components/BackHistoryButton";
+
 export default function Puzzle() {
   return (
     <>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
           <div className="p-4">
-            <button type="mini" onClick={() => { history.back() }}>ไปหน้าก่อน</button>
+            <BackHistoryButton />
           </div>
           <div className="flex-grow flex flex-col justify-center align-middle gap-4 p-8">
             <p>

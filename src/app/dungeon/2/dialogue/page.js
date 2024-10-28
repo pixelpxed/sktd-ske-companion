@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-// import { useRouter } from "next/router";
+import BackHistoryButton from "@/app/components/BackHistoryButton";
 
 import StickmanImage from "../../../components/StickmanImage";
 import { sequence } from "../../../data/sequence/02.js";
@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <div className="flex flex-col w-dvw h-dvh">
         <div className="p-4 m-auto max-w-screen-sm w-full">
-            <button type="mini" onClick={() => { history.back() }}>ไปหน้าก่อน</button>
+          <BackHistoryButton />
         </div>
         <div className="flex flex-col flex-grow w-dvw m-auto max-w-screen-sm">
           {curSequence.stickman.show ? <div className="flex-grow" /> : <></>}
