@@ -9,8 +9,8 @@ import { useSearchParams } from "next/navigation";
 var randomQuestionIndex = []
 var randomSituationIndex = []
 
-function Puzzle() {
-  const searchParams = useSearchParams()
+export default function Puzzle() {
+  // const searchParams = useSearchParams()
 
   const [showInvalid, setShowInvalid] = useState(false);
   const [showIncorrect, setShowIncorrect] = useState(false);
@@ -95,10 +95,10 @@ function Puzzle() {
   );
 }
 
-export function PuzzlePage() {
-  return (
-    <Suspense>
-      <Puzzle />
-    </Suspense>
-  )
-}
+// export function PuzzlePage() {
+//   return (
+//     <Suspense>
+//       <Puzzle />
+//     </Suspense>
+//   )
+// }
