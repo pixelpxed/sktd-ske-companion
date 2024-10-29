@@ -54,7 +54,6 @@ export default function Puzzle() {
 
   return (
     <>
-    <Suspense>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
           <div className="p-4">
@@ -91,8 +90,10 @@ export default function Puzzle() {
             <button onClick={handleSequence} type="filled">ต่อไป</button>
           </div>
         </div>
+        <Suspense>
+          <h1>An error occured, contact staff: Suspense</h1>
+        </Suspense>
       </div>
-    </Suspense>
     </>
   );
 }
