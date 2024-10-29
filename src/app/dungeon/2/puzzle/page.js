@@ -54,7 +54,6 @@ export default function Puzzle() {
 
   return (
     <>
-    <Suspense>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
           <div className="p-4">
@@ -92,7 +91,6 @@ export default function Puzzle() {
           </div>
         </div>
       </div>
-    </Suspense>
     </>
   );
 }
