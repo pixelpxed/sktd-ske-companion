@@ -3,6 +3,8 @@ import TutorialArrow from "@/app/components/TutorialArrow"
 export const tutorial = [
   (
     <div key="slide-1" className="grid gap-2 text-center">
+      <p>แม่มดบันทึกสูตรยาไว้ใน้ระบบ HEX แต่ดันลืมวิธีแปลงค่าเป็น RGB เพื่อปรุงยา
+      </p>
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">#9A667F</h1>
     </div>
