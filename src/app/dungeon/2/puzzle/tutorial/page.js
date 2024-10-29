@@ -1,13 +1,23 @@
 'use client'
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 
-import { tutorial } from "@/app/data/tutorial/01";
+import { validAnswer, randomSituationList } from "@/app/data/puzzle/02";
+
+import { tutorial } from "@/app/data/tutorial/02";
 
 export default function TutorialPage() {
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
+
+  const [randomQuestionIndex, setRandomQuestionIndex] = useState(null); // Initialize as null
+  const [randomSituationIndex, setRandomSituationIndex] = useState(0);
+
+  useEffect(() => {
+    setRandomQuestionIndex(Math.floor(Math.random() * validAnswer.length)); // Set the value after component mounts
+    setRandomSituationIndex(Math.floor(Math.random() * randomSituationList.length)); // Set the value after component mounts
+  }, []);
 
   return (
     <>
@@ -30,7 +40,7 @@ export default function TutorialPage() {
             <button onClick={() => {
               (currentSlideShow < tutorial.length - 1) ? 
                 setCurrentSlideShow(currentSlideShow + 1) :
-                location.href = "/dungeon/1/puzzle"
+                location.href = `/dungeon/2/puzzle?clock=${randomQuestionIndex}&situation=${randomSituationIndex}`
             }} type="filled">{
               (currentSlideShow !== tutorial.length - 1) ? 
               "ขั้นตอนต่อไป" : "เริ่มแก้โจทย์"

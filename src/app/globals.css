@@ -39,3 +39,19 @@ input[type="number"] {
 p {
   @apply text-lg
 }
+
+table {
+  @apply border border-slate-300
+}
+
+ul {
+  @apply ml-8
+}
+
+li {
+  @apply list-disc
+}
+
+hr {
+  @apply border-t border-neutral-500 my-4
+}

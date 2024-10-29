@@ -51,7 +51,7 @@ export default function Puzzle() {
           <div className="p-4">
             <BackHistoryButton />
           </div>
-          <div className="flex-grow flex flex-col justify-center align-middle gap-4 p-8">
+          <div className="animate-fade [animation-delay:250ms] opacity-0 [animation-fill-mode:forwards] flex-grow flex flex-col justify-center align-middle gap-4 p-8">
             <div className="flex justify-between items-end">
               <h1><b>ปริมาณสารในน้ำยาวิเศษ</b></h1>
               <div className="[&>*]:text-right">
