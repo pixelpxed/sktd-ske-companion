@@ -3,7 +3,7 @@
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 import { randomSituationList, validAnswer } from "@/app/data/puzzle/02";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 var randomQuestionIndex = []
@@ -54,6 +54,7 @@ export default function Puzzle() {
 
   return (
     <>
+    <Suspense>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
           <div className="p-4">
@@ -91,6 +92,7 @@ export default function Puzzle() {
           </div>
         </div>
       </div>
+    </Suspense>
     </>
   );
 }
