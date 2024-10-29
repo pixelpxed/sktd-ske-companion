@@ -18,15 +18,15 @@ function Puzzle() {
   const [randomSituationIndex, setRandomSituationIndex] = useState(0);
   
   useEffect(() => {
-    setRandomQuestionIndex(searchParams.get("clock")); // Set the value after component mounts
-    setRandomSituationIndex(searchParams.get("situation")); // Set the value after component mounts
+    // setRandomQuestionIndex(searchParams.get("clock")); // Set the value after component mounts
+    // setRandomSituationIndex(searchParams.get("situation")); // Set the value after component mounts
+    setRandomQuestionIndex(Math.floor(Math.random() * validAnswer.length)); // Set the value after component mounts
+    setRandomSituationIndex(Math.floor(Math.random() * randomSituationList.length)); // Set the value after component mounts
   }, []);
 
   console.log(randomQuestionIndex);
   console.log(randomSituationIndex);
   console.log(randomSituationList[randomSituationIndex]);
-
-
 
   function handleSequence() {
     const ans = document.querySelector("#input-1").value
