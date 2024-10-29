@@ -9,7 +9,7 @@ import { useSearchParams } from "next/navigation";
 var randomQuestionIndex = []
 var randomSituationIndex = []
 
-export default function Puzzle() {
+function Puzzle() {
   const searchParams = useSearchParams()
 
   const [showInvalid, setShowInvalid] = useState(false);
@@ -90,10 +90,15 @@ export default function Puzzle() {
             <button onClick={handleSequence} type="filled">ต่อไป</button>
           </div>
         </div>
-        <Suspense>
-          <h1>An error occured, contact staff: Suspense</h1>
-        </Suspense>
       </div>
     </>
   );
+}
+
+export function PuzzlePage() {
+  return (
+    <Suspense>
+      <Puzzle />
+    </Suspense>
+  )
 }
