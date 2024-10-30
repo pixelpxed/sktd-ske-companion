@@ -1,53 +1,65 @@
-"use client"
+'use client'
 
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 
-import StickmanImage from "../../../components/StickmanImage";
-import { sequence } from "../../../data/sequence/02.js";
-
-let sequence_next = null;
+import { sequence } from "@/app/data/sequence/02";
 
 export default function SequencePage() {
-  const [sequenceIndex, setSequenceIndex] = useState(0);
-  // const router = useRouter(); // Move useRouter hook here
+  const [currentSlideShow, setCurrentSlideShow] = useState(0)
+  const [disableNextButton, setDisableNextButton] = useState(false)
 
-  let curSequence = sequence[sequenceIndex];
-
-  function handleSequence() {
-    if ((sequenceIndex + 1) < sequence.length) {
-      setSequenceIndex(sequenceIndex + 1);
-    } else {
-      location.href = "/dungeon/2/puzzle/"
-      // router.push("/dungeon/2/puzzle/");
-    }
+  function tempDisableNextButton() {
+    setDisableNextButton(true);
+    setTimeout(() => {
+      setDisableNextButton(false);
+    }, 3000);
   }
+
+  const [randomQuestionIndex, setRandomQuestionIndex] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (sequence[currentSlideShow].cooldown === true) {
+      tempDisableNextButton();
+    }
+
+    if (isMounted) {
+      const storedIndex = localStorage.getItem("sktd-ske2024-room01-randomQuestionIndex");
+      if (storedIndex !== null) {
+        setRandomQuestionIndex(storedIndex);
+      }
+    }
+  }, [sequence, currentSlideShow, isMounted]);
 
   return (
     <>
-      <div className="flex flex-col w-dvw h-dvh">
-        <div className="p-4 m-auto max-w-screen-sm w-full">
-          <BackHistoryButton />
-        </div>
-        <div className="flex flex-col flex-grow w-dvw m-auto max-w-screen-sm">
-          {curSequence.stickman.show ? <div className="flex-grow" /> : <></>}
-          <div className={curSequence.stickman.show ? "" : "flex flex-col justify-center h-full [&>div]:!pb-4"}>
-            {
-              curSequence.dialog.show ?
-                <div className="p-4 pb-0 [&>*]:text-center [&>*]:max-w-full [&>*]:w-max [&>*]:m-auto [&>*]:mr-28">
-                  <p>{curSequence.dialog.text}</p>
-                </div> : <></>
-            }
-            {
-              curSequence.stickman.show ?
-                <StickmanImage
-                  type={curSequence.stickman.type}
-                  action={curSequence.stickman.action}
-                /> : <></>
-            }
+      <div className="w-dvw h-dvh">
+        <div className="grid grid-rows-[max-content,1fr,max-content] w-dvw h-dvh m-auto max-w-screen-sm">
+          <div className="flex justify-between items-center p-4">
+            <BackHistoryButton />
+            <p className="text-sm">Chapter 01: Story <b className="font-mono">({currentSlideShow + 1}/{sequence.length})</b></p>
+          </div>
+          <div className="flex align-middle p-4 gap-0 transition-opacity">
+            {sequence[currentSlideShow].page}
           </div>
           <div className="grid gap-2 p-4 w-full">
-            <button onClick={handleSequence} type="filled">ต่อไป</button>
+            <button className={currentSlideShow > 0 ? "" : "opacity-0 interact-none"} onClick={() => { setCurrentSlideShow(currentSlideShow - 1) }} type="outlined">ก่อนหน้า</button>
+            <button onClick={() => {
+              (currentSlideShow < sequence.length - 1) ?
+                setCurrentSlideShow(currentSlideShow + 1) :
+                location.href = "/dungeon/2/puzzle/tutorial"
+            }}
+              className={disableNextButton ? "!button-disabled" : ""}
+              type="filled">
+              {(currentSlideShow !== sequence.length - 1) ?
+                "ต่อไป" : `แก้ปัญหากัน !`}
+            </button>
           </div>
         </div>
       </div>

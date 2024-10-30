@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from "react";
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 
 export default function Puzzle() {

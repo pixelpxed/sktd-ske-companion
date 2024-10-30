@@ -80,17 +80,14 @@ export default function Puzzle() {
           <div className="animate-fade [animation-delay:250ms] opacity-0 [animation-fill-mode:forwards] flex-grow flex flex-col justify-center align-middle gap-4 p-8">
             <div className="grid gap-2 grid-cols-1 [&>p]:text-left">
               <p>
-                ตอนนี้อาณาจักรกำลังเผชิญกับปัญหา 
-                <span className="font-bold text-gradient">
+                ปัญหา: <span className="font-bold text-gradient">
                   {randomSituationList[randomSituationIndex].problem} 
                 </span>
               </p>
               <p>
-                อย่างไรก็ตาม กษัตริย์ผู้ยิ่งใหญ่ได้จารึกรหัสซึ่งวิธีการ 
-                <span className="font-bold text-gradient">
+                วิธีแก้: <span className="font-bold text-gradient">
                   {randomSituationList[randomSituationIndex].solution}
                 </span>
-                ในการแก้ปัญหา
               </p>
               <hr />
               <p>
