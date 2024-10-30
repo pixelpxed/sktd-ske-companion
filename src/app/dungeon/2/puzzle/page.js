@@ -76,7 +76,7 @@ export default function Puzzle() {
               </p>
               <hr />
               <p>
-                <span className="font-bold">แก้รหัสที่อยู่ทาง {(parseInt(randomQuestionIndex) + 1)} นาฬิกาหน่อยสิ</span>
+                <span className="font-bold">แก้รหัสที่อยู่ทาง {(parseInt(randomQuestionIndex) + 1)} นาฬิกาของหมูเด้งหน่อยสิ</span>
               </p>
               <input type="text" id="input-1" placeholder="พิมพ์คำตอบของคุณ (XXXX)" className="font-mono" />
               {showInvalid ? <p className="text-red-400 text-sm">รูปแบบคำตอบไม่ถูกต้อง</p> : <></>}

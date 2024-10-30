@@ -4,8 +4,8 @@ export const tutorial = [
       <p>
         <b>Logic Gate (โลจิกเกต)</b> เป็นอุปกรณ์ที่ใช้ในการ<br />
         ประมวลผลตรรกะต่างๆ<br />
-        ของเลขฐานสองใน<br />
-        แผงวงจรอิเล็กทรอนิกส์
+        ของไบนารี่ <span className="text-sm opacity-75">(เลขฐานสอง)</span><br />
+        ในแผงวงจรอิเล็กทรอนิกส์
       </p>
     </div>
   ),
@@ -26,7 +26,7 @@ export const tutorial = [
   (
     <div key="slide-4" className="p-4 [&>p]:text-2xl [&>ul]:text-2xl">
       <p>
-        Logic Gate พื้นฐาน ประกอบไปด้วย เกต 
+        Logic Gate พื้นฐาน ประกอบไปด้วย เกต
       </p>
       <ul>
         <li>NOT</li>
@@ -41,7 +41,7 @@ export const tutorial = [
   (
     <div key="slide-5" className="p-4 [&>p]:text-2xl">
       <p>
-        แต่ละเกต จะสามารถรับค่าได้ 1 หรือ 2 input และแสดงค่าออกมาได้ 1 output 
+        แต่ละเกต จะสามารถรับค่าได้ 1 หรือ 2 input และแสดงค่าออกมาได้ 1 output
       </p>
     </div>
   ),
