@@ -8,7 +8,7 @@ export const randomSituationList = [
     "solution": "เปิดใช้งานระบบกรองน้ำโบราณ"
   },
   {
-    "problem": "ปัญหาอาหารขาดแคลน",
+    "problem": "อาหารขาดแคลน",
     "solution": "เปิดคลังอาหารฉุกเฉิน"
   }
 ]

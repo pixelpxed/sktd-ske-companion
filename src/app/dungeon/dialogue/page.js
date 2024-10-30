@@ -1,13 +1,26 @@
 'use client'
 
-import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 
 import { sequence } from "@/app/data/sequence/00";
 
 export default function SequencePage() {
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
+  const [disableNextButton, setDisableNextButton] = useState(false)
+
+  function tempDisableNextButton() {
+    setDisableNextButton(true);
+    setTimeout(() => {
+      setDisableNextButton(false);
+    }, 3000);
+  }
+
+  useEffect(() => {
+    if (sequence[currentSlideShow].cooldown == true) { // Replace 2 with the specific number you want
+      tempDisableNextButton();
+    }
+  }, [currentSlideShow]);
 
   return (
     <>
@@ -17,7 +30,7 @@ export default function SequencePage() {
             <BackHistoryButton />
           </div>
           <div className="flex align-middle p-4 gap-0 transition-opacity">
-            {sequence[currentSlideShow]}
+            {sequence[currentSlideShow].page}
           </div>
           <div className="grid gap-2 p-4 w-full">
             <button className={currentSlideShow > 0 ? "" : "opacity-0 interact-none"} onClick={() => { setCurrentSlideShow(currentSlideShow - 1) }} type="outlined">ก่อนหน้า</button>
@@ -25,7 +38,9 @@ export default function SequencePage() {
               (currentSlideShow < sequence.length - 1) ?
                 setCurrentSlideShow(currentSlideShow + 1) :
                 location.href = "/dungeon/1"
-            }} type="filled">
+            }}
+              className={disableNextButton ? "!button-disabled" : ""}
+              type={"filled"}>
               {(currentSlideShow !== sequence.length - 1) ?
                 "ต่อไป" : "เริ่มเล่นห้อง 01"}
             </button>

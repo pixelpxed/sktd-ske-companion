@@ -1,12 +1,15 @@
-import TutorialArrow from "@/app/components/TutorialArrow"
+import StickmanImage from "@/app/components/StickmanImage";
+import TutorialArrow from "@/app/components/TutorialArrow";
+import { roomOneRandomizer } from "@/app/utilities/roomOneRandomizer";
+
+roomOneRandomizer()
 
 export const tutorial = [
   (
     <div key="slide-1" className="grid gap-2 text-center">
-      <p>แม่มดบันทึกสูตรยาไว้ใน้ระบบ HEX แต่ดันลืมวิธีแปลงค่าเป็น RGB เพื่อปรุงยา
-      </p>
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">#9A667F</h1>
+      <p>(แม่มดบันทึกสูตรยาไว้ใน้ระบบ HEX แต่ดันลืมวิธีแปลงค่าเป็น RGB เพื่อปรุงยา)</p>
     </div>
   ),
   (
@@ -194,6 +197,20 @@ export const tutorial = [
         <span className="text-blue-500"> 127</span>
       </h1>
       <p className="pt-2">เป็นอันเสร็จ 🎉</p>
+    </div>
+  ),
+  (
+    <div key="slide-8" className="grid gap-2 text-center m-auto">
+      <div className="mb-4">
+        <StickmanImage
+          type="explaining"
+        />
+      </div>
+      <p>
+        นอกจากในมือถือ<br />
+        <b>วิธีถอดรหัสยาก็มีแปะอยู่บนกำแพงรอบ ๆ ห้องนี้ด้วยนะ !</b><br />
+        ใช้มันเพื่อถอดรหัสสูตรยาได้เลย !
+      </p>
     </div>
   )
 ]

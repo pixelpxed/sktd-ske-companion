@@ -11,14 +11,6 @@ import { tutorial } from "@/app/data/tutorial/02";
 export default function TutorialPage() {
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
 
-  // const [randomQuestionIndex, setRandomQuestionIndex] = useState(null); // Initialize as null
-  // const [randomSituationIndex, setRandomSituationIndex] = useState(0);
-
-  // useEffect(() => {
-  //   setRandomQuestionIndex(Math.floor(Math.random() * validAnswer.length)); // Set the value after component mounts
-  //   setRandomSituationIndex(Math.floor(Math.random() * randomSituationList.length)); // Set the value after component mounts
-  // }, []);
-
   return (
     <>
       <div className="w-dvw h-dvh">

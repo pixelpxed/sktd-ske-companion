@@ -26,11 +26,12 @@ export default function StickmanImage({ type }) {
   }
 
   return (
-    <div className="h-[200px] w-[200px] mx-auto">
+    <div className="h-[calc(200px+0.5rem+0.875rem)] w-[200px] mx-auto">
       <div className="absolute h-[200px] w-[200px] m-auto border-4 border-white border-opacity-50 rounded-2xl overflow-hidden">
         {/* <Image src={stickmanActions[type].body} width={150} height={200} alt="Stickman Idle" /> */}
         <Image className="relative left-1/2 -translate-x-1/2 -translate-y-4 h-[300px] max-w-[300px] w-[300px]" src={cloud_actions[type]} width={300} height={300} alt="Stickman Idle" />
       </div>
+      <p className="text-sm opacity-50 translate-y-[calc(200px+0.5rem)]">น้อน Cloud</p>
     </div>
   )
 }

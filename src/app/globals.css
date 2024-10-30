@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply box-border ![line-height:1.4]
+    @apply box-border ![line-height:1.4] transition-opacity
   }
   
   body {
@@ -13,7 +13,7 @@
   
   button,
   button[type="filled"] {
-    @apply bg-white text-black px-4 py-2 rounded-full w-full transition-opacity select-none
+    @apply bg-white text-black px-4 py-2 rounded-full w-full select-none
   }
   
   button[type="outlined"] {
@@ -38,7 +38,7 @@
   }
   
   p {
-    @apply text-xl
+    @apply text-xl text-pretty
   }
   
   table {
@@ -70,6 +70,14 @@
   }
 
   .text-gradient {
-    @apply [background:linear-gradient(105deg,#EB695A_0%,#E98462_25%,#6370B9_75%,#A16499_100%)] !bg-clip-text text-transparent inline-block
+    @apply [background:linear-gradient(90deg,#EB695A_0%,#E98462_25%,#6370B9_75%,#A16499_100%)] !bg-clip-text text-transparent inline-block
+  }
+
+  .text-gradient-custom {
+    @apply !bg-clip-text text-transparent inline-block
+  }
+
+  .button-disabled {
+    @apply pointer-events-none opacity-50
   }
 }
