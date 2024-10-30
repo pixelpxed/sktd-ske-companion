@@ -14,18 +14,18 @@ module.exports = {
         clubOrange: "#E98462",
         clubPurple: "#6370B9",
         clubBlue: "#A16499",
-        clubAccent: "#10253F",
-        clubGradient: "linear-gradient(0%: {background: var(--clubRed)}, 25%: {background: var(--clubOrange)}, 75%: {background: var(--clubPurple)}, 100%: {background: var(--clubBlue)})"
+        clubAccent: "#10253F"
       },
       animation: {
-				fade: 'fadeIn .25s ease-in-out',
-			},
-			keyframes: {
-				fadeIn: {
-					from: { opacity: 0 },
-					to: { opacity: 1 },
-				},
-			},
+        fade: 'fadeIn .25s ease-in-out',
+        slideIn: 'slideIn .25 ease-out'
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        }
+      },
     },
   },
   plugins: [],

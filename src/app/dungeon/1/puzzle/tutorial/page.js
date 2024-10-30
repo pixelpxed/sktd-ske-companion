@@ -20,13 +20,7 @@ export default function TutorialPage() {
             {tutorial[currentSlideShow]}
           </div>
           <div className="grid gap-2 p-4 w-full">
-            {
-              currentSlideShow > 0 ?
-              <button onClick={() => {
-                  setCurrentSlideShow(currentSlideShow - 1)
-              }} type="outlined">ขั้นตอนก่อนหน้า</button> :
-              <></>
-            }
+            <button className={currentSlideShow > 0 ? "" : "opacity-0 interact-none"} onClick={() => { setCurrentSlideShow(currentSlideShow - 1) }} type="outlined">ก่อนหน้า</button>
             <button onClick={() => {
               (currentSlideShow < tutorial.length - 1) ? 
                 setCurrentSlideShow(currentSlideShow + 1) :

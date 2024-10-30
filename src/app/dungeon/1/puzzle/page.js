@@ -9,10 +9,20 @@ import { validAnswer } from "@/app/data/puzzle/01";
 export default function Puzzle() {
   const [showInvalid, setShowInvalid] = useState(false);
   const [showIncorrect, setShowIncorrect] = useState(false);
-  const [randomQuestionIndex, setRandomQuestionIndex] = useState(null); // Initialize as null
+  const [randomQuestionIndex, setRandomQuestionIndex] = useState(0); // Initialize as null
+
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i >= 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
   useEffect(() => {
-    setRandomQuestionIndex(Math.floor(Math.random() * 100)); // Set the value after component mounts
+    const sequence = Array.from({ length: 100 }, (_, i) => i + 1);
+    shuffleArray(sequence)
+    setRandomQuestionIndex(sequence[0])
   }, []);
 
   function handleSequence() {

@@ -1,57 +1,75 @@
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
 
-* {
-  @apply box-border
-}
+@layer base {
+  * {
+    @apply box-border ![line-height:1.4]
+  }
+  
+  body {
+    @apply bg-slate-900 text-white
+  }
+  
+  button,
+  button[type="filled"] {
+    @apply bg-white text-black px-4 py-2 rounded-full w-full transition-opacity select-none
+  }
+  
+  button[type="outlined"] {
+    @apply bg-transparent text-white border border-white border-opacity-50
+  }
+  
+  button[type="mini"] {
+    @apply bg-transparent text-white border border-white border-opacity-50 px-2 py-1 text-sm w-max max-w-full
+  }
+  
+  button[disabled] {
+    @apply pointer-events-none opacity-50
+  }
+  
+  button:hover {
+    @apply opacity-80
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    @apply bg-transparent border border-slate-500 p-2 rounded-lg
+  }
+  
+  p {
+    @apply text-xl
+  }
+  
+  table {
+    @apply border border-slate-300
+  }
+  
+  ul {
+    @apply ml-8
+  }
+  
+  li {
+    @apply list-disc
+  }
+  
+  hr {
+    @apply border-t border-neutral-500 my-4
+  }
 
-body {
-  @apply bg-slate-900 text-white
-}
+  .dialogue-container {
+    @apply flex flex-col m-auto text-center
+  }
 
-button,
-button[type="filled"] {
-  @apply bg-white text-black px-4 py-2 rounded-full w-full transition-opacity
-}
+  .place-center {
+    @apply grid items-center
+  }
 
-button[type="outlined"] {
-  @apply bg-transparent text-white border border-white border-opacity-50
-}
+  .interact-none {
+    @apply pointer-events-none select-none
+  }
 
-button[type="mini"] {
-  @apply bg-transparent text-white border border-white border-opacity-50 px-2 py-1 text-sm w-max max-w-full
-}
-
-button[disabled="true"] {
-  @apply pointer-events-none opacity-50
-}
-
-button:hover {
-  @apply opacity-80
-}
-
-input[type="text"],
-input[type="number"] {
-  @apply bg-transparent border border-slate-500 p-2 rounded-lg
-}
-
-p {
-  @apply text-lg
-}
-
-table {
-  @apply border border-slate-300
-}
-
-ul {
-  @apply ml-8
-}
-
-li {
-  @apply list-disc
-}
-
-hr {
-  @apply border-t border-neutral-500 my-4
+  .text-gradient {
+    @apply [background:linear-gradient(105deg,#EB695A_0%,#E98462_25%,#6370B9_75%,#A16499_100%)] !bg-clip-text text-transparent inline-block
+  }
 }

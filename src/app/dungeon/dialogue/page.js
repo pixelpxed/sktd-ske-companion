@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import BackHistoryButton from "@/app/components/BackHistoryButton";
 
-import { sequence } from "@/app/data/sequence/01_new";
+import { sequence } from "@/app/data/sequence/00";
 
 export default function sequencePage() {
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
@@ -24,10 +24,10 @@ export default function sequencePage() {
             <button onClick={() => {
               (currentSlideShow < sequence.length - 1) ?
                 setCurrentSlideShow(currentSlideShow + 1) :
-                location.href = "/dungeon/1/puzzle/tutorial"
+                location.href = "/dungeon/1"
             }} type="filled">
               {(currentSlideShow !== sequence.length - 1) ?
-                "ต่อไป" : "แก้ยังไงนะ?"}
+                "ต่อไป" : "เริ่มเล่นห้อง 01"}
             </button>
           </div>
         </div>
