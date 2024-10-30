@@ -68,7 +68,7 @@ export default function Puzzle() {
     <>
       <div className="w-dvw h-dvh">
         <div className="flex flex-col w-dvw h-dvh m-auto max-w-screen-sm">
-          <div className="flex justify-between p-4">
+          <div className="flex justify-between items-center p-4">
             <BackHistoryButton />
             {
               displayResetButton ?

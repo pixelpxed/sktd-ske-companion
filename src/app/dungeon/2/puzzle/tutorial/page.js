@@ -15,8 +15,9 @@ export default function TutorialPage() {
     <>
       <div className="w-dvw h-dvh">
         <div className="grid grid-rows-[max-content,1fr,max-content] w-dvw h-dvh m-auto max-w-screen-sm">
-          <div className="p-4">
+          <div className="flex justify-between items-center p-4">
             <BackHistoryButton />
+            <p className="text-sm">Chapter 02: Tutorial <b className="font-mono">({currentSlideShow + 1}/{tutorial.length})</b></p>
           </div>
           <div className="flex flex-col pt-8 align-middle gap-0 transition-opacity">
             {tutorial[currentSlideShow]}

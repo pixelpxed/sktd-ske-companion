@@ -43,7 +43,7 @@ export default function SequencePage() {
         <div className="grid grid-rows-[max-content,1fr,max-content] w-dvw h-dvh m-auto max-w-screen-sm">
           <div className="flex justify-between items-center p-4">
             <BackHistoryButton />
-            <p className="text-sm">Chapter 01: Story <b className="font-mono">({currentSlideShow + 1}/{sequence.length})</b></p>
+            <p className="text-sm">Chapter 02: Story <b className="font-mono">({currentSlideShow + 1}/{sequence.length})</b></p>
           </div>
           <div className="flex align-middle p-4 gap-0 transition-opacity">
             {sequence[currentSlideShow].page}

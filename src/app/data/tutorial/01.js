@@ -212,5 +212,17 @@ export const tutorial = [
         ใช้มันเพื่อถอดรหัสสูตรยาได้เลย !
       </p>
     </div>
+  ),
+  (
+    <div key="slide-8" className="grid gap-2 text-center m-auto">
+      <div className="mb-4">
+        <StickmanImage
+          type="pointing"
+        />
+      </div>
+      <p>
+        <b>ทีนี้ก็ถึงตานายแล้ว ลองไปทำกันได้เลย !</b>
+      </p>
+    </div>
   )
 ]
