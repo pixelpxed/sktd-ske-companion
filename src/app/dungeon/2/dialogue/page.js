@@ -8,7 +8,7 @@ import { sequence } from "../../../data/sequence/02.js";
 
 let sequence_next = null;
 
-export default function Home() {
+export default function SequencePage() {
   const [sequenceIndex, setSequenceIndex] = useState(0);
   // const router = useRouter(); // Move useRouter hook here
 

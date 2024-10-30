@@ -6,7 +6,7 @@ import BackHistoryButton from "@/app/components/BackHistoryButton";
 
 import { sequence } from "@/app/data/sequence/01_new";
 
-export default function sequencePage() {
+export default function SequencePage() {
   const [currentSlideShow, setCurrentSlideShow] = useState(0)
 
   return (
