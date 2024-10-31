@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics'
+import { Analytics } from '@vercel/analytics/next'
 
 import localFont from "next/font/local";
 import "./globals.css";
