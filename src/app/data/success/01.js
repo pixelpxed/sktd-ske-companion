@@ -57,7 +57,9 @@ export const success = [
       <div key="sequence-04" className="dialogue-container">
         <p>คุณได้รับของวิเศษ</p>
         <p className="text-6xl font-bold animate-fade [animation-delay:500ms] opacity-0 [animation-fill-mode:forwards]">
-          {typeof window !== 'undefined' ? (`${validJigsaw[parseInt(localStorage.getItem("sktd-ske2024-room03-randomJigsawIndex"))][0]}`) : ''}
+          {(typeof window !== 'undefined')
+            ? validJigsaw[parseInt(localStorage.getItem("sktd-ske2024-room03-randomJigsawIndex"))][0]
+            : ''}
         </p>
         <p>แล้ว!!</p>
       </div>
