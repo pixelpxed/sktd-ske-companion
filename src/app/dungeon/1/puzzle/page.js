@@ -40,13 +40,13 @@ export default function Puzzle() {
     const g = document.querySelector("#input-g").value;
     const b = document.querySelector("#input-b").value;
 
-    // if ((r == 999) && (g == 999) && (b == 999)) {
-    //   document.querySelector("#input-r").value = "";
-    //   document.querySelector("#input-g").value = "";
-    //   document.querySelector("#input-b").value = "";
+    if ((r == 999) && (g == 999) && (b == 999)) {
+      document.querySelector("#input-r").value = "";
+      document.querySelector("#input-g").value = "";
+      document.querySelector("#input-b").value = "";
 
-    //   return setDisplayResetButton(true)
-    // }
+      return setDisplayResetButton(true)
+    }
 
     const isValidColorComponent = (value) => /^\d+$/.test(value) && value >= 0 && value <= 255;
 
