@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics'
+
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -43,6 +45,7 @@ export default function RootLayout({ children }) {
         className={`${lineSeedSansTH.className}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
