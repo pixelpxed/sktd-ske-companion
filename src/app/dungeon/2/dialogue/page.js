@@ -53,7 +53,7 @@ export default function SequencePage() {
             <button onClick={() => {
               (currentSlideShow < sequence.length - 1) ?
                 setCurrentSlideShow(currentSlideShow + 1) :
-                location.href = "/dungeon/2/puzzle/tutorial"
+                location.href = "/dungeon/2/puzzle"
             }}
               className={disableNextButton ? "!button-disabled" : ""}
               type="filled">

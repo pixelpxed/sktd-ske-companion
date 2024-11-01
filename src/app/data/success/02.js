@@ -44,16 +44,6 @@ export const success = [
   },
   {
     "page": (
-      <div key="sequence-03" className="dialogue-container">
-        <p className="text-4xl">
-          โปรดเดินไปหา Staff ที่ทางออกของห้องนี้เพื่อดำเนินการต่อ!!
-        </p>
-      </div>
-    ),
-    "cooldown": true
-  },
-  {
-    "page": (
       <div key="sequence-04" className="dialogue-container">
         <p>คุณได้รับของวิเศษ</p>
         <p className="text-6xl font-bold animate-fade [animation-delay:500ms] opacity-0 [animation-fill-mode:forwards]">
@@ -62,6 +52,7 @@ export const success = [
             : ''}
         </p>
         <p>แล้ว!!</p>
+        <p className="pt-4">โปรดเดินไปหา Staff ที่ทางออกของห้องนี้เพื่อดำเนินการต่อ!</p>
       </div>
     ),
     "cooldown": true

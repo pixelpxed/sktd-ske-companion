@@ -7,12 +7,6 @@ import { useState } from "react"
 import BackHistoryButton from "@/app/components/BackHistoryButton"
 
 export default function Dungeon() {
-  const [disableNextButton, setDisableNextButton] = useState(true)
-
-  setTimeout(() => {
-    setDisableNextButton(false)
-  }, 3000);
-
   return (
     <>
       <div className="w-dvw h-dvh">
@@ -27,7 +21,6 @@ export default function Dungeon() {
           <div className="grid gap-2 p-4 w-full">
             <Link 
               href="/dungeon/2/dialogue" 
-              className={disableNextButton ? "!button-disabled" : ""}
             >
               <button type="filled">เล่น &apos;the wish of... taweret.&apos;</button>
             </Link>

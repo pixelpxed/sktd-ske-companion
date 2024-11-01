@@ -29,7 +29,7 @@ export default function TutorialPage() {
                   location.href = "/dungeon/credits"
               }} type="filled">{
                 (currentSlideShow !== success.length - 1) ? 
-                "ขั้นตอนต่อไป" : "เริ่มแก้โจทย์"
+                "ต่อไป" : "ไปห้องต่อไป"
                 }</button> :
               <></>
             }

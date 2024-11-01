@@ -6,6 +6,11 @@ roomOneRandomizer()
 
 export const tutorial = [
   (
+    <div key="slide-1" className="grid gap-2 text-center h-full place-items-center">
+      <h1 className="font-bold text-6xl">Tutorial</h1>
+    </div>
+  ),
+  (
     <div key="slide-1" className="grid gap-2 text-center">
       <p>ตัวอย่างเช่น</p>
       <h1 className="font-bold text-6xl">#9A667F</h1>
@@ -21,6 +26,7 @@ export const tutorial = [
         <span className="text-green-500">66</span>
         <span className="text-blue-500">7F</span>
       </h1>
+      <p>แยกตัวเลขออกมาเป็น 3 ส่วน</p>
     </div>
   ),
   (
@@ -40,6 +46,7 @@ export const tutorial = [
           <h1 className="text-red-500 text-6xl font-bold">A</h1>
           <p>เลขตำแหน่งที่ 2</p>
         </div>
+        <p>แยกตัวเลขในส่วนออกมาเป็น 2 ตัว</p>
       </div>
     </div>
   ),
@@ -66,6 +73,7 @@ export const tutorial = [
             <p><b>10 × 16<sup>0</sup> = <span className="opacity-0 pointer-events-none select-none">10</span></b></p>
           </div>
         </div>
+        <p>เทียบตัวเลขกับตารางที่อยู่บนกำแพง</p>
       </div>
     </div>
   ),
