@@ -64,6 +64,14 @@ export default function Puzzle() {
     }
   }
 
+  function nextCell(element, event) {
+    if (event.key == "Backspace" || event.key == "Tab") {
+      return
+    } else {
+      return document.querySelector(element).focus()
+    }
+  }
+
   return (
     <>
       <div className="w-dvw h-dvh">
@@ -94,9 +102,9 @@ export default function Puzzle() {
                 <span className="font-bold">แก้รหัสที่อยู่ทาง {(parseInt(randomQuestionIndex) + 1)} นาฬิกาของหมูเด้งหน่อยสิ</span>
               </p>
               <div className="grid grid-cols-4 gap-2">
-                <input type="text" id="input-1" inputMode="numeric" placeholder="X" onKeyUp={() => {document.querySelector("#input-2").focus()}} className="font-mono text-center" />
-                <input type="text" id="input-2" inputMode="numeric" placeholder="X" onKeyUp={() => {document.querySelector("#input-3").focus()}} className="font-mono text-center" />
-                <input type="text" id="input-3" inputMode="numeric" placeholder="X" onKeyUp={() => {document.querySelector("#input-4").focus()}} className="font-mono text-center" />
+                <input type="text" id="input-1" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-2", event)}} className="font-mono text-center" />
+                <input type="text" id="input-2" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-3", event)}} className="font-mono text-center" />
+                <input type="text" id="input-3" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-4", event)}} className="font-mono text-center" />
                 <input type="text" id="input-4" inputMode="numeric" placeholder="X" className="font-mono text-center" />
               </div>
               {showInvalid ? <p className="text-red-400 text-sm !text-center">รูปแบบคำตอบไม่ถูกต้อง</p> : <></>}
