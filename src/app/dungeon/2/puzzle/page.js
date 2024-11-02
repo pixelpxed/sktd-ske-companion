@@ -15,7 +15,7 @@ export default function Puzzle() {
 
   function randomizeLocalQuestionIndex() {
     localStorage.setItem("sktd-ske2024-room02-randomQuestionIndex", Math.floor(Math.random() * validAnswer.length))
-    localStorage.setItem("sktd-ske2024-room02-randomSituationIndex", Math.floor(Math.random() * randomSituationList.length)) 
+    localStorage.setItem("sktd-ske2024-room02-randomSituationIndex", Math.floor(Math.random() * randomSituationList.length))
     setRandomQuestionIndex(localStorage.getItem("sktd-ske2024-room02-randomQuestionIndex")); // Set the value after component mounts
     setRandomSituationIndex(localStorage.getItem("sktd-ske2024-room02-randomSituationIndex")); // Set the value after component mounts
   }
@@ -26,7 +26,7 @@ export default function Puzzle() {
     setRandomQuestionIndex(localStorage.getItem("sktd-ske2024-room02-randomQuestionIndex")); // Set the value after component mounts
     setRandomSituationIndex(localStorage.getItem("sktd-ske2024-room02-randomSituationIndex")); // Set the value after component mounts
   }, []);
-  
+
   function handleSequence() {
     const ans1 = document.querySelector("#input-1").value
     const ans2 = document.querySelector("#input-2").value
@@ -45,9 +45,9 @@ export default function Puzzle() {
     const isValidAnswerFormat = (value) => /^[01]$/.test(value);
 
     if (
-      isValidAnswerFormat(ans1) && 
-      isValidAnswerFormat(ans2) && 
-      isValidAnswerFormat(ans3) && 
+      isValidAnswerFormat(ans1) &&
+      isValidAnswerFormat(ans2) &&
+      isValidAnswerFormat(ans3) &&
       isValidAnswerFormat(ans4)
     ) {
       setShowInvalid(false);
@@ -64,11 +64,25 @@ export default function Puzzle() {
     }
   }
 
-  function nextCell(element, event) {
+  function nextCell(nextElement, curElement, event) {
     if (event.key == "Backspace" || event.key == "Tab") {
       return
     } else {
-      return document.querySelector(element).focus()
+      if (nextElement !== null) {
+        return document.querySelector(nextElement).focus()
+      }
+    }
+  }
+
+  function beforeNextCell(beforeElement, curElement, event) {
+    if (
+      event.key == "Backspace" && 
+      document.querySelector(curElement).value == ""
+    ) {
+      event.preventDefault()
+      if (beforeElement !== null) {
+        return document.querySelector(beforeElement).focus()
+      }
     }
   }
 
@@ -80,16 +94,16 @@ export default function Puzzle() {
             <BackHistoryButton />
             {
               displayResetButton ?
-                <button type="mini" onClick={() => {randomizeLocalQuestionIndex(); setDisplayResetButton(false);}}>สุ่มเลขขวดใหม่</button> : 
+                <button type="mini" onClick={() => { randomizeLocalQuestionIndex(); setDisplayResetButton(false); }}>สุ่มเลขขวดใหม่</button> :
                 <></>
-              }
+            }
             <p className="text-sm">Chapter 02: Puzzle</p>
           </div>
           <div className="animate-fade [animation-delay:250ms] opacity-0 [animation-fill-mode:forwards] flex-grow flex flex-col justify-center align-middle gap-4 p-8">
             <div className="grid gap-2 grid-cols-1 [&>p]:text-left">
               <p>
                 ปัญหา: <span className="font-bold text-gradient">
-                  {randomSituationList[randomSituationIndex].problem} 
+                  {randomSituationList[randomSituationIndex].problem}
                 </span>
               </p>
               <p>
@@ -102,10 +116,10 @@ export default function Puzzle() {
                 <span className="font-bold">แก้รหัสที่อยู่ทาง {(parseInt(randomQuestionIndex) + 1)} นาฬิกาของหมูเด้งหน่อยสิ</span>
               </p>
               <div className="grid grid-cols-4 gap-2">
-                <input type="text" id="input-1" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-2", event)}} className="font-mono text-center" />
-                <input type="text" id="input-2" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-3", event)}} className="font-mono text-center" />
-                <input type="text" id="input-3" inputMode="numeric" placeholder="X" onKeyUp={(event) => {nextCell("#input-4", event)}} className="font-mono text-center" />
-                <input type="text" id="input-4" inputMode="numeric" placeholder="X" className="font-mono text-center" />
+                <input type="text" id="input-1" inputMode="numeric" placeholder="X" onKeyDown={(event) => { beforeNextCell(null, "#input-1", event) }}       onKeyUp={(event) => { nextCell("#input-2", "#input-1", event) }} className="font-mono text-center" />
+                <input type="text" id="input-2" inputMode="numeric" placeholder="X" onKeyDown={(event) => { beforeNextCell("#input-1", "#input-2", event) }} onKeyUp={(event) => { nextCell("#input-3", "#input-2", event) }} className="font-mono text-center" />
+                <input type="text" id="input-3" inputMode="numeric" placeholder="X" onKeyDown={(event) => { beforeNextCell("#input-2", "#input-3", event) }} onKeyUp={(event) => { nextCell("#input-4", "#input-3", event) }} className="font-mono text-center" />
+                <input type="text" id="input-4" inputMode="numeric" placeholder="X" onKeyDown={(event) => { beforeNextCell("#input-3", "#input-4", event) }} onKeyUp={(event) => { nextCell(null, "#input-4", event) }}       className="font-mono text-center" />
               </div>
               {showInvalid ? <p className="text-red-400 text-sm !text-center">รูปแบบคำตอบไม่ถูกต้อง</p> : <></>}
               {showIncorrect ? <p className="text-red-400 text-sm !text-center">คำตอบไม่ถูกต้อง</p> : <></>}
