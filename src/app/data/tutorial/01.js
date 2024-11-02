@@ -7,7 +7,7 @@ roomOneRandomizer()
 export const tutorial = [
   (
     <div key="slide-1" className="grid gap-2 text-center h-full place-items-center">
-      <h1 className="font-bold text-6xl">Tutorial</h1>
+      <h1 className="font-bold text-6xl">วิธีแก้ปริศนา</h1>
     </div>
   ),
   (
@@ -92,12 +92,12 @@ export const tutorial = [
           <h1 className="text-red-500 text-6xl font-bold">9</h1>
           <div className="text-left">
             <p>เลขตำแหน่งที่ 1</p>
-            <p><b>9 × 16<sup>1</sup> = <span>144</span></b></p>
+            <p><b>9 × 16 = <span className="opacity-0 pointer-events-none select-none">144</span></b></p>
           </div>
           <h1 className="text-red-500 text-6xl font-bold">A</h1>
           <div className="text-left">
             <p>เลขตำแหน่งที่ 2</p>
-            <p><b>10 × 16<sup>0</sup> = <span>10</span></b></p>
+            <p><b>10 × 1 = <span className="opacity-0 pointer-events-none select-none">10</span></b></p>
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@ export const tutorial = [
         <span className="text-green-500">66</span>
         <span className="text-blue-500">7F</span>
       </h1>
-      <p className="pt-2">และเมื่อเราทำต่อ ๆ ไปจนครบ จะได้เลข RGB</p>
+      <p className="pt-2">และเมื่อเราซ้ำไปเรื่อย ๆ อีก 2 ครั้ง จนครบ จะได้เลข RGB</p>
       <h1 className="font-bold text-5xl">
         <span className="text-red-500">154</span>,
         <span className="text-green-500"> 102</span>,

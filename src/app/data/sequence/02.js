@@ -138,23 +138,8 @@ export const sequence = [
   },
   {
     "page": (
-      <div key={"sequence-02"} className="dialogue-container">
-        <div className="mb-4">
-          <StickmanImage
-            type="headache"
-          />
-        </div>
-        <p>
-          พวกท่านได้รับกุญแจสำคัญแล้ว!
-        </p>
-      </div>
-    ),
-    "cooldown": false
-  },
-  {
-    "page": (
       <div key={"sequence-04"} className="dialogue-container">
-        <p>บัดนี้ จงไขความลับที่ซ่อนอยู่บนผนังที่ตำแหน่ง</p>
+        <p>พวกท่านได้รับกุญแจสำคัญแล้ว! บัดนี้ จงไขความลับที่ซ่อนอยู่บนผนังที่ตำแหน่ง</p>
         <p className="text-8xl font-bold text-center">
           <span className="text-gradient">
             {typeof window !== 'undefined' ? (parseInt(localStorage.getItem("sktd-ske2024-room02-randomQuestionIndex")) + 1) : ''}

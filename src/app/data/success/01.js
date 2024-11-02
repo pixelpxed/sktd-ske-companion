@@ -53,6 +53,7 @@ export const success = [
         </p>
         <p>แล้ว!!</p>
         <p className="pt-4">โปรดเดินไปหา Staff ที่ทางออกของห้องนี้เพื่อดำเนินการต่อ!</p>
+        <p className="pt-4">เมื่อเรียบร้อยแล้วให้ไปห้องที่ 2 ได้เลย!</p>
       </div>
     ),
     "cooldown": true
